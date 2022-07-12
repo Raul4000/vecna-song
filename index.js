@@ -118,9 +118,9 @@ app.get('/lista', (req, res) => {
   // getUserPlaylists(me.body.id);
 })
 
-app.listen(5500, () =>
+app.listen(PORT, () =>
   console.log(
-    'HTTP Server up. Now go to http://localhost:5500/login in your browser.'
+    'HTTP Server up. Now go to http://localhost:'+PORT+'/login in your browser.'
   )
 );
 
@@ -178,10 +178,7 @@ koa.use(KoaJson())
 koa.use(router.allowedMethods())
 koa.use(router.routes())
 
-koa.listen(8080, () => {
-  console.log('Elegant web browser running on http://localhost:8080');
-})
-
+const PORT = process.env.PORT
 
 
 
